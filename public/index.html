@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+Name: Roy Aguilar
+Date: 11.19.2026
+CSC 372-01
+Frontend interface for Triviabook allowing users to view topics, filter questions,
+answer random trivia questions, and submit new questions.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Triviabook</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Triviabook</h1>
+            <p>Test your knowledge</p>
+        </header>
+        <main>
+            <section class="card">
+                <h2>Quick Review</h2>
+                <button id="random-btn" type="button">Get Random Question</button>
+                <div id="random-question-box"></div>
+                <form id="answer-form">
+                    <label for="guess-input">Your Guess:</label>
+                    <input id="guess-input" type="text" placeholder="Type your answer" required>
+                    <button type="submit">Check Answer</button>
+                </form>
+                <p id="answer-feedback"></p>
+            </section>
+            <section class="card">
+                <h2>Available Topics</h2>
+                <button id="load-topics-btn" type="button">Refresh Topics</button>
+                <ul id="topics-list"></ul>
+            </section>
+            <section class="card">
+                <h2>Browse Questions by Topic</h2>
+                <form id="search-form">
+                    <label for="topic-input">Topic:</label>
+                    <input id="topic-input" type="text" placeholder="e.g., science" required>
+                    <label for="difficulty-select">Difficulty:</label>
+                    <select id="difficulty-select">
+                        <option value="">All</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <label for="limit-input">Limit:</label>
+                    <input id="limit-input" type="number" min="1" placeholder="Optional">
+                    <button type="submit">Search</button>
+                </form>
+                <div id="topic-questions-list"></div>
+            </section>
+            <section class="card">
+                <h2>Add a New Question</h2>
+                <form id="add-question-form">
+                    <label for="new-topic">Topic:</label>
+                    <input id="new-topic" type="text" placeholder="e.g., history" required>
+                    <label for="new-question">Question:</label>
+                    <input id="new-question" type="text" placeholder="Enter question text" required>
+                    <label for="new-answer">Answer:</label>
+                    <input id="new-answer" type="text" placeholder="Enter correct answer" required>
+                    <label for="new-difficulty">Difficulty:</label>
+                    <select id="new-difficulty" required>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <button type="submit">Add Question</button>
+                </form>
+                <p id="add-feedback"></p>
+            </section>
+        </main>
+    </body>
+</html>
